@@ -106,6 +106,7 @@ public class Board {
     }
 // vertical -true = up->down , false- left->right
     public boolean boardLegal(Word w){
+
         int flag = 0;
         if(gameBoard[7][7].getTile()==null){
             /*

@@ -1,17 +1,14 @@
 package test;
-
-
 import java.util.Arrays;
-import java.util.Objects;
 
 public class Word {
- private Tile[] tilesArr;
+ private final Tile[] tiles;
  private final int row,col;
- private boolean vertical;
+ private final boolean vertical;
 
     public Word(Tile[] tilesArr, int row, int col, boolean vertical) {
-        Tile[] newTiles = new Tile[tilesArr.length];
-        System.arraycopy(tilesArr, 0, newTiles, 0, tilesArr.length);
+        tiles = new Tile[tilesArr.length];
+        System.arraycopy(tilesArr, 0, tiles, 0, tilesArr.length);
         this.row = row;
         this.col = col;
         this.vertical = vertical;
@@ -19,7 +16,11 @@ public class Word {
 
     //Getters
     public Tile[] getTilesArr() {
-        return tilesArr;
+        return tiles;
+    }
+
+    public void setTiles(Tile[] tiles) {
+        System.arraycopy(tiles, 0, this.tiles, 0, tiles.length);
     }
 
     public int getRow() {
@@ -39,8 +40,6 @@ public class Word {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Word word = (Word) o;
-        return row == word.row && col == word.col && vertical == word.vertical && Arrays.equals(tilesArr, word.tilesArr);
+        return row == word.row && col == word.col && vertical == word.vertical && Arrays.equals(tiles, word.tiles);
     }
-
-
 }

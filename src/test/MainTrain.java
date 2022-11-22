@@ -72,26 +72,33 @@ public class MainTrain {
 		for (Tile t : ts)
 			bag.put(t);
 
-//		Word horn = new Word(get("HORN"), 7, 5, false);
-//		if (b.tryPlaceWord(horn) != 14)
-//			System.out.println("problem in placeWord for 1st word (-10)");
-//
-//		Word farm = new Word(get("FA_M"), 5, 7, true);
-//		if (b.tryPlaceWord(farm) != 9)
-//			System.out.println("problem in placeWord for 2ed word (-10)");
-//
-//		Word paste = new Word(get("PASTE"), 9, 5, false);
-//		if (b.tryPlaceWord(paste) != 25)
-//			System.out.println("problem in placeWord for 3ed word (-10)");
-//
-//		Word mob = new Word(get("_OB"), 8, 7, false);
-//		if (b.tryPlaceWord(mob) != 18)
-//			System.out.println("problem in placeWord for 4th word (-10)");
-//
-//		Word bit = new Word(get("BIT"), 10, 4, false);
-//		if (b.tryPlaceWord(bit) != 22)
-//			System.out.println("problem in placeWord for 5th word (-15)");
+		Word horn = new Word(get("HORN"), 7, 5, false);
+		if (b.tryPlaceWord(horn) != 14)
+			System.out.println("problem in placeWord for 1st word (-10)");
 
+		Word farm = new Word(get("FA_M"), 5, 7, true);
+		if (b.tryPlaceWord(farm) != 9)
+			System.out.println("problem in placeWord for 2ed word (-10)");
+
+		Word paste = new Word(get("PASTE"), 9, 5, false);
+		if (b.tryPlaceWord(paste) != 25)
+			System.out.println("problem in placeWord for 3ed word (-10)");
+
+		Word mob = new Word(get("_OB"), 8, 7, false);
+		if (b.tryPlaceWord(mob) != 18)
+			System.out.println("problem in placeWord for 4th word (-10)");
+
+		Word bit = new Word(get("BIT"), 10, 4, false);
+		if (b.tryPlaceWord(bit) != 22)
+			System.out.println("problem in placeWord for 5th word (-15)");
+
+		Word bit2=new Word(get("S_TA"), 9, 4, true);
+		if(b.tryPlaceWord(bit2)!=28)
+			System.out.println("SBTA should be 28 (-15)");
+
+		Word bit3=new Word(get("A_ONE"), 11, 3, false);
+		if(b.tryPlaceWord(bit3)!=26)
+			System.out.println("ATONE should be 26 (-15)");
 	}
 
 	public static void main(String[] args) {
@@ -99,5 +106,4 @@ public class MainTrain {
 		testBoard(); // 70 points
 		System.out.println("done");
 	}
-
 }

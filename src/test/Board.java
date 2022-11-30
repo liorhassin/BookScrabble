@@ -536,6 +536,15 @@ public class Board {
         }
     }
 
+    public boolean checkIfCompleted(Word w){
+        for(int i = 0; i < w.getTilesArr().length; i++){
+            if (w.getTilesArr()[i] == null){
+                return false;
+            }
+        }
+        return true;
+    }
+
     /***
      * Main method that will be called if player is trying to place new word.
      * @param w - given word to place.
@@ -544,6 +553,9 @@ public class Board {
     public int tryPlaceWord(Word w){
         int score = 0;
         checkComplete(w);
+        if (!checkIfCompleted(w)){
+            return 0;
+        }
         if(!boardLegal(w)){
             return 0;
         }

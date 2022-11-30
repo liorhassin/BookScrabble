@@ -53,7 +53,7 @@ public class MainTrain {
 			System.out.println("board should be a Singleton (-5)");
 
 		Bag bag = Bag.getBag();
-		Tile[] ts = new Tile[10];
+		Tile[] ts = new Tile[10]; //Pull random tiles from bag.
 		for (int i = 0; i < ts.length; i++)
 			ts[i] = bag.getRand();
 
@@ -69,7 +69,7 @@ public class MainTrain {
 				|| !b.boardLegal(w5) || !b.boardLegal(w6))
 			System.out.println("your boardLegal function is wrong (-10)");
 
-		for (Tile t : ts)
+		for (Tile t : ts) //Return tiles taken from bag.
 			bag.put(t);
 
 		Word horn = new Word(get("HORN"), 7, 5, false);
@@ -99,6 +99,11 @@ public class MainTrain {
 		Word bit3=new Word(get("A_ONE"), 11, 3, false);
 		if(b.tryPlaceWord(bit3)!=26)
 			System.out.println("ATONE should be 26 (-15)");
+
+		Word bit4=new Word(get("ABC"), 11, 3, true);
+		if(b.tryPlaceWord(bit4) == 0)
+			System.out.println("Out of tiles, Can't place this word!");
+		b.printBoard();
 	}
 
 	public static void main(String[] args) {

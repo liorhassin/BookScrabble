@@ -7,7 +7,7 @@ public class Word {
  private final boolean vertical;
 
     public Word(Tile[] tilesArr, int row, int col, boolean vertical) {
-        tiles = new Tile[tilesArr.length];
+        this.tiles = new Tile[tilesArr.length];
         System.arraycopy(tilesArr, 0, tiles, 0, tilesArr.length);
         this.row = row;
         this.col = col;

@@ -7,7 +7,7 @@ public class Tile {
     public final int score;
 
     // default Ctor that will reset all the elements.
-    private Tile(char letter, int score) {
+    Tile(char letter, int score) {
         this.letter = letter;
         this.score = score;
     }

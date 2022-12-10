@@ -18,25 +18,19 @@ public class BloomFilter {
     }
 
     public void add(String s){
-        try {
-            MessageDigest md = MessageDigest.getInstance(params[0]);
-            byte[] bts = md.digest(s.getBytes());
-            BigInteger a = new BigInteger(bts);
-            int test = a.intValue();
-            test = Math.abs(test) % size;
-            String b = Integer.toBinaryString(test);
-            b = String.format("%"+ size + "s", b).replaceAll(" ", "0");
-            for(int i = 0; i < size; i++){
-                if(b.indexOf(i) == 1) {
-                    bitSet.set(i, true);
-                }
-                else{
-                    bitSet.set(i,false);
-                }
+        byte[] bts;
+        for(String string : params){
+            try {
+                MessageDigest md = MessageDigest.getInstance(string);
+                bts = md.digest(s.getBytes());
+                BigInteger a = new BigInteger(bts);
+                int test = a.intValue();
+                test = Math.abs(test) % size;
+                bitSet.set(test);
+                System.out.println(bitSet);
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
             }
-            System.out.println(bitSet);
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
         }
     }
 }

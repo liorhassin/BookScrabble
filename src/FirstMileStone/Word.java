@@ -1,4 +1,4 @@
-package test;
+package FirstMileStone;
 import java.util.Arrays;
 
 public class Word {

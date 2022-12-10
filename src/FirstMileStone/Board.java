@@ -1,8 +1,6 @@
-package test;
+package FirstMileStone;
 
 
-import javax.swing.table.TableCellEditor;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Board {

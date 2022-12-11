@@ -69,19 +69,19 @@ public class MainTrain {
 		if(!bf.toString().equals("0010010000000000000000000000000000000000000100000000001000000000000000000000010000000001000000000000000100000010100000000010000000000000000000000000000000110000100000000000000000000000000010000000001000000000000000000000000000000000000000000000000000001"))
 			System.out.println("problem in the bit vector of the bloom filter (-10)");
 
-//		boolean found=true;
-//		for(String w : words)
-//			found &= bf.contains(w);
-//
-//		if(!found)
-//			System.out.println("problem finding words that should exist in the bloom filter (-15)");
-//
-//		found=false;
-//		for(String w : words)
-//			found |= bf.contains(w+"!");
-//
-//		if(found)
-//			System.out.println("problem finding words that should not exist in the bloom filter (-15)");
+		boolean found=true;
+		for(String w : words)
+			found &= bf.contains(w);
+
+		if(!found)
+			System.out.println("problem finding words that should exist in the bloom filter (-15)");
+
+		found=false;
+		for(String w : words)
+			found |= bf.contains(w+"!");
+
+		if(found)
+			System.out.println("problem finding words that should not exist in the bloom filter (-15)");
 	}
 
 	public static void testIOSearch() throws Exception{
@@ -99,14 +99,14 @@ public class MainTrain {
 		if(IOSearcher.search("cat", "text1.txt","text2.txt"))
 			System.out.println("your IOsearch found a word that does not exist (-5)");
 	}
-//
-//	public static void testDictionary() {
-//		Dictionary d = new Dictionary("text1.txt","text2.txt");
-//		if(!d.query("is"))
-//			System.out.println("problem with dictionarry in query (-5)");
-//		if(!d.challenge("lazy"))
-//			System.out.println("problem with dictionarry in query (-5)");
-//	}
+
+	public static void testDictionary() {
+		Dictionary d = new Dictionary("text1.txt","text2.txt");
+		if(!d.query("is"))
+			System.out.println("problem with dictionarry in query (-5)");
+		if(!d.challenge("lazy"))
+			System.out.println("problem with dictionarry in query (-5)");
+	}
 
 	public static void main(String[] args) {
 		testLRU();
@@ -118,7 +118,7 @@ public class MainTrain {
 		} catch(Exception e) {
 			System.out.println("you got some exception (-10)");
 		}
-//		testDictionary();
+		testDictionary();
 		System.out.println("done");
 	}
 }
